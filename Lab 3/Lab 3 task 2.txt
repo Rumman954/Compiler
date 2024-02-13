@@ -1,0 +1,27 @@
+2. Write a program to determine whether the Given Input is Operators or Not. (Arithmetic Operators +, -, *, /, %, =)
+e.g., 2+3=5
+Ans: 
+operator1:  + 
+operator2:  = 
+
+ Ans:
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isOperator(char c) {
+    return (c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '=');
+}
+
+int main() {
+    string input;
+    cout << "Enter input: ";
+    cin >> input;
+    int operatorIndex = 1;
+    for (char c : input) {
+        if (isOperator(c)) {
+           cout << "operator" << operatorIndex << ": " << c << endl;
+            operatorIndex++;
+        }
+    }
+    return 0;
+}

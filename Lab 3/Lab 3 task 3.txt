@@ -1,0 +1,26 @@
+3.	Write a program to determine whether the Given Input is Comment line(s) or Not.
+e.g.
+//single line comment
+
+/* multiple line   
+Comment */
+
+Ans
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isComment(string input) {
+    return (input.substr(0, 2) == "//" || (input.substr(0, 2) == "/*" && input.find("*/") != string::npos));
+}
+
+int main() {
+    string input;
+    cout << "Enter input: ";
+    getline(cin, input);
+    if (isComment(input)) {
+        cout << "It's a Comment" << endl;
+    } else {
+        cout << "Not a comment" << endl;
+    }
+    return 0;
+}
