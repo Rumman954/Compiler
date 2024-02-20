@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isValidIdentifier(const string& input_string) {
+    if (input_string[0] >= '0' && input_string[0] <= '9') {
+        cout << "The variable name is Invalid" << endl;
+        cout << "The first character cannot be a number" << endl;
+        return false;
+    }
+
+    for (char c : input_string) {
+        if (!(c >= '0' && c <= '9') && !(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && c != '_' ) {
+            cout << "The variable name is Invalid" << endl;
+            cout << "Variable name cannot contain any special character" << endl;
+            return false;
+        }
+    }
+
+    cout << "The variable name is Valid" << endl;
+    return true;
+}
+
+int main() {
+    string input_string;
+
+    cout << "Enter a Variable Name: ";
+    cin >> input_string;
+
+    cout << boolalpha << isValidIdentifier(input_string) << endl;
+
+    return 0;
+}
